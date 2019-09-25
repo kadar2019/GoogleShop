@@ -5,6 +5,22 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a class="clickable" (click)="onSelectedProducts()">Home</a></li>
+    </ul>
+    <ul class=" nav navbar-nav pull-right">
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+    <div class="card" style="width: 20rem;">
+    <ul class="nav navbar-nav  pull-left ">
+      <li class="active"><a class="clickable" (click)="onSelectedProducts()">Catégories</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Téléphone
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="clickable" (click)="onProductsPromo()">samsung galaxy A70</a></li>
+          <li><a class="clickable" (click)="onProductsDispo()">Iphone 11</a></li>
+        </ul>
+      </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
           <span class="caret"></span></a>
@@ -13,9 +29,28 @@
           <li><a class="clickable" (click)="onProductsDispo()">Disponibles</a></li>
         </ul>
       </li>
-      <li><a routerLink="/caddy">Caddy</a></li>
-      <li><a href="#">Page 3</a></li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tablette
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="clickable" (click)="onProductsPromo()">samsung galaxy</a></li>
+          <li><a class="clickable" (click)="onProductsDispo()">MICROSOFT</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ordinateur
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="clickable" (click)="onProductsPromo()">Dell</a></li>
+          <li><a class="clickable" (click)="onProductsDispo()">lenove</a></li>
+        </ul>
+      </li>
     </ul>
+    </div>
+
+
     <ul *ngIf="!this.authService.isAuthenticated()" class=" nav navbar-nav pull-right">
       <li>
         <a (click)="onLogin()"class="btn">
@@ -30,15 +65,8 @@
         </a>
       </li>
     </ul>
-    <ul class=" nav navbar-nav pull-right">
-      <li>
-        <a routerLink="/caddy">
-          <span class="badge">{{caddyService.currentCaddyName}} :
-            {{caddyService.getSize()}}</span>
-          <img class="img-circle img-thumbnail img-rounded" src="assets/images/caddy.png">
-        </a>
-      </li>
-    </ul>
+
+
   </div>
 </nav>
 <div class="row">
